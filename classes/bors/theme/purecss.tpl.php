@@ -3,13 +3,14 @@
 	<head>
 		<meta charset="utf-8">
 		<title><?= htmlspecialchars($self->browser_title());?></title>
-		<meta name="description" content="description">
-		<meta name="author" content="DevOOPS">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="<?= htmlspecialchars($self->description());?>">
+
 <?= $self->template_metas("\t\t"); ?>
-		<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+
 		<link href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
+		<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <?php
 	if(!empty($css_list))
 		foreach($css_list as $css)
@@ -29,8 +30,20 @@
 
 	</head>
 <body>
+
+	<div id="layout" class="pure-g">
+		 <div class="content pure-u-1 pure-u-md-3-4">
+			<div class="header">
+
+<h1><?= $self->page_title(); ?></h1>
+			</div>
+
 <?php
 	echo $body;
 ?>
+
+	</div>
+</div>
+
 </body>
 </html>
