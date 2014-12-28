@@ -1,0 +1,18 @@
+{
+    "name": "balancer/bors-theme-purecss",
+    "description": "PureCSS theme support for BORS© Framework",
+    
+    "authors": [
+        {
+            "name": "Balancer",
+            "email": "balancer@balancer.ru"
+        }
+    ],
+
+    "prefer-stable": true,
+    "minimum-stability": "dev",
+
+    "autoload": {
+        "classmap": ["classes/"]
+    }
+}
