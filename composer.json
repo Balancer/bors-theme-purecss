@@ -1,18 +1,28 @@
 {
-    "name": "balancer/bors-theme-purecss",
-    "description": "PureCSS theme support for BORS© Framework",
-    
-    "authors": [
-        {
-            "name": "Balancer",
-            "email": "balancer@balancer.ru"
-        }
-    ],
+	"name": "balancer/bors-theme-purecss",
+	"description": "PureCSS theme support for BORS© Framework",
 
-    "prefer-stable": true,
-    "minimum-stability": "dev",
+	"authors": [
+		{
+			"name": "Balancer",
+			"email": "balancer@balancer.ru"
+		}
+	],
 
-    "autoload": {
-        "classmap": ["classes/"]
-    }
+   "require": {
+		"robloach/component-installer": "*"
+	},
+
+	"autoload": {
+		"classmap": ["classes/"]
+		"psr-4": { "B2\\": "src/" }
+	}
+
+	"extra": {
+		"component": {
+			"styles": [
+				"asset/*.css"
+			],
+		}
+	}
 }
