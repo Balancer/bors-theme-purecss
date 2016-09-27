@@ -22,7 +22,7 @@
 		"component": {
 			"styles": [
 				"asset/*.css"
-			],
+			]
 		}
 	}
 }
