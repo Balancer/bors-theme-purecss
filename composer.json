@@ -16,7 +16,7 @@
 	"autoload": {
 		"classmap": ["classes/"],
 		"psr-4": { "B2\\": "src/" }
-	}
+	},
 
 	"extra": {
 		"component": {
