@@ -1,24 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="<?= htmlspecialchars($self->description());/*"*/?>">
 	<title><?= htmlspecialchars($self->browser_title()); ?></title>
 	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+
 <!--[if lte IE 8]>
 	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-old-ie-min.css">
 <![endif]-->
 <!--[if gt IE 8]><!-->
 	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
 <!--<![endif]-->
+
 	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
 
-<!--[if lte IE 8]>
-	<link rel="stylesheet" href="/combo/1.18.13?/css/layouts/marketing-old-ie.css">
-<![endif]-->
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="/combo/1.18.13?/css/layouts/blog-old-ie.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="/_composer-components/bors-theme-purecss/asset/main-blue-1.18.13.css">
+    <!--<![endif]-->
+
 <!--[if lt IE 9]>
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
 <![endif]-->
 
 <?php
@@ -42,58 +48,89 @@
 
 <body>
 
-
 <div id="layout">
-    <!-- Menu toggle -->
-    <a href="#menu" id="menuLink" class="menu-link">
-        <!-- Hamburger icon -->
-        <span></span>
-    </a>
-
-    <div id="menu">
-        <div class="pure-menu">
-            <a class="pure-menu-heading" href="#">Company</a>
-
-            <ul class="pure-menu-list">
-                <li class="pure-menu-item"><a href="#" class="pure-menu-link">Home</a></li>
-                <li class="pure-menu-item"><a href="#" class="pure-menu-link">About</a></li>
-
-                <li class="pure-menu-item" class="menu-item-divided pure-menu-selected">
-                    <a href="#" class="pure-menu-link">Services</a>
-                </li>
-
-                <li class="pure-menu-item"><a href="#" class="pure-menu-link">Contact</a></li>
-            </ul>
-        </div>
+        <a href="#menu" id="menuLink" class="menu-link">
+    <span></span>
+</a>
+<div id="menu">
+    <div class="pure-menu">
+        <a class="pure-menu-heading" href="/">Pure</a>
+        <ul class="pure-menu-list">
+          
+            <li class="pure-menu-item pure-menu-selected">
+                <a href="/start/" class="pure-menu-link">Get Started</a>
+            </li>
+          
+            <li class="pure-menu-item">
+                <a href="/layouts/" class="pure-menu-link">Layouts</a>
+            </li>
+          
+            <li class="pure-menu-item menu-item-divided">
+                <a href="/base/" class="pure-menu-link">Base</a>
+            </li>
+          
+            <li class="pure-menu-item">
+                <a href="/grids/" class="pure-menu-link">Grids</a>
+            </li>
+          
+            <li class="pure-menu-item">
+                <a href="/forms/" class="pure-menu-link">Forms</a>
+            </li>
+          
+            <li class="pure-menu-item">
+                <a href="/buttons/" class="pure-menu-link">Buttons</a>
+            </li>
+          
+            <li class="pure-menu-item">
+                <a href="/tables/" class="pure-menu-link">Tables</a>
+            </li>
+          
+            <li class="pure-menu-item">
+                <a href="/menus/" class="pure-menu-link">Menus</a>
+            </li>
+          
+            <li class="pure-menu-item menu-item-divided">
+                <a href="/tools/" class="pure-menu-link">Tools</a>
+            </li>
+          
+            <li class="pure-menu-item">
+                <a href="/customize/" class="pure-menu-link">Customize</a>
+            </li>
+          
+            <li class="pure-menu-item">
+                <a href="/extend/" class="pure-menu-link">Extend</a>
+            </li>
+          
+            <li class="pure-menu-item">
+                <a href="http://blog.purecss.io/" class="pure-menu-link">Blog</a>
+            </li>
+            <li class="pure-menu-item">
+                <a href="https://github.com/yahoo/pure/releases/" class="pure-menu-link">Releases</a>
+            </li>
+        </ul>
     </div>
-
-	<div id="main">
-        <div class="header">
-            <h1>Page Title</h1>
-            <h2>A subtitle for your page goes here</h2>
-        </div>
-	</div>
-
 </div>
 
-	<div class="container theme-showcase" role="main">
 
-		<div class="jumbotron">
+        <div id="main">
+
+<div class="content">
+		<?= $self->layout()->breadcrumbs(); ?>
+</div>
+
+<div class="header">
 			<h1><?= $self->page_title() ?></h1>
-			<?php if($self->description()) echo "<p>".htmlspecialchars($self->description())."</p>"; ?>
-		</div>
+			<?php if($self->description()) echo "<h2>".htmlspecialchars($self->description())."</h2>"; ?>
+</div>
 
-<?php require __DIR__.'/elements/breadcrumbs.tpl.php'; ?>
+
+<div class="content">
 
 		<?= $self->body() ?>
 
-	</div> <!-- /container -->
+</div>
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-
-	<script src="../../assets/js/docs.min.js"></script>
-	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 	<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
 
 <?php
